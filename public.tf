@@ -86,8 +86,8 @@ resource "aws_network_acl" "public" {
 }
 
 resource "aws_eip" "default" {
-  count = local.ngw_count
-  vpc   = "true"
+  count  = local.ngw_count
+  domain = "vpc"
 
   lifecycle {
     create_before_destroy = true
